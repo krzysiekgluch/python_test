@@ -11,7 +11,12 @@ import cx_Oracle
 
 os.chdir("c:/python/bazy") # format:'C:/folder/folder'
 file='p.txt'
-line = open(file, "r").readlines()
+
+line = []
+with open(file, "r") as file:
+    line = file.readlines()
+
+#with open as
 userpwd=line[0]
        
 connection = cx_Oracle.connect("N1400274", password=userpwd, dsn="KMB_PRE")  #<na produkcję dsn= KMB_PRD">
